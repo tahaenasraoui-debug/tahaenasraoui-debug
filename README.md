@@ -1,67 +1,86 @@
+<!-- ================================================================= -->
+<!-- PALETTE: Monokai / Linux Terminal Slate                           -->
+<!-- Background: #0d1117 (GitHub Dark default)                        -->
+<!-- Accents: #38bdf8 (Cyan), #a3e635 (Terminal Green), #e2e8f0 (Muted) -->
+<!-- ================================================================= -->
+
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Mohamed+Taha+Enasraoui;Math+%26+CS+Student;Low-Level+Systems+%26+Python;Arch+Linux+Enthusiast" alt="Typing SVG" />
 
-  <p align="center">
-    <b>First-year Math & CS student exploring systems programming, algorithm design, and applied tools.</b>
-  </p>
+<!-- RAW INLINE SVG HEADER: Zero external image hosting, renders natively everywhere -->
+<svg width="100%" max-width="740" height="150" viewBox="0 0 740 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="740" height="150" rx="10" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="739" height="149" rx="9.5" stroke="#30363d"/>
+  
+  <!-- Window Controls -->
+  <circle cx="28" cy="22" r="5" fill="#f43f5e"/>
+  <circle cx="44" cy="22" r="5" fill="#eab308"/>
+  <circle cx="60" cy="22" r="5" fill="#22c55e"/>
+  <text x="82" y="26" fill="#8b949e" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11">taha@archlinux: ~</text>
 
-  <p align="center">
-    <a href="https://github.com/tahaenasraoui-debug?tab=repositories">
-      <img src="https://img.shields.io/github/followers/tahaenasraoui-debug?label=Followers&style=flat-square&color=238636" alt="Followers" />
-    </a>
-    <img src="https://img.shields.io/badge/Focus-Systems%20%26%20Software-0969da?style=flat-square" alt="Focus" />
-    <img src="https://img.shields.io/badge/OS-Arch%20Linux-1793d1?style=flat-square&logo=archlinux&logoColor=white" alt="Arch Linux" />
-  </p>
+  <!-- Terminal Session -->
+  <text x="28" y="62" fill="#a3e635" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="600">taha@arch:~$</text>
+  <text x="145" y="62" fill="#f0f6fc" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13">whoami --focus</text>
+  
+  <text x="28" y="92" fill="#38bdf8" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">› Mohamed Taha Enasraoui</text>
+  <text x="28" y="114" fill="#8b949e" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">  Undergrad Math &amp; CS student | building low-level systems &amp; practical tools</text>
+</svg>
+
+</div>
+
+<br/>
+
+### 📟 Context & Working Philosophy
+
+I'm an undergraduate studying Mathematics and Computer Science at Faculté des Sciences de Rabat. I spend most of my time either breaking down algorithmic problems or looking under the hood of operating systems to see how memory, processes, and runtime environments actually behave.
+
+Right now, my day-to-day lives inside an **Arch Linux** environment where I write low-level code in **C/C++** to master foundational mechanics, and **Python** whenever I need to prototype fast, automate repetitive workflows, or build data pipelines. 
+
+I care about software that is lean, deterministic, and built to solve tangible problems rather than adding unnecessary layers of abstraction. Outside the terminal, training disciplines like Brazilian Jiu-Jitsu and boxing keeps my head clear and reinforces the same mindset I bring to engineering: consistency, deliberate repetition, and staying calm under pressure.
+
+---
+
+### 🔨 What I'm Building & Focusing On
+
+* **NASA Space Apps Challenge:** Designing an astronaut health telemetry and vital signs monitoring pipeline for high-stakes environments.
+* **Low-Level Mechanics (C / C++):** Writing custom system utilities, exploring memory management, and implementing fundamental data structures from scratch without relying on external libraries.
+* **Scripting & Tooling (Python & Bash):** Crafting daily automation tools, Linux workflow scripts, and rapid data experiments.
+* **Academic Foundation:** Balancing pure mathematical rigor (analysis, discrete structures, and linear algebra) with computational implementation.
+
+---
+
+### ⚙️ Tech Stack & Workbench
+
+<!-- Clean terminal-like markdown table instead of dozens of bright mismatched badges -->
+| Layer | Technologies & Tools |
+| :--- | :--- |
+| **Languages** | `C` · `C++` · `Python` · `Bash` |
+| **Environment** | Arch Linux · GNU Coreutils · GDB / Valgrind · Make |
+| **Development** | Git / GitHub · Neovim · VS Code |
+| **Focus Areas** | Systems Programming · Algorithmic Analysis · Automation & Scripting |
+
+---
+
+### 📊 GitHub Activity & Metric Streams
+
+<div align="center">
+
+<!-- Compact stats matched cleanly to GitHub dark-mode background (#0d1117) -->
+<img src="https://github-readme-stats.vercel.app/api?username=tahaenasraoui-debug&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=a3e635&text_color=8b949e" width="48%" alt="Taha's Stats" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tahaenasraoui-debug&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=8b949e" width="48%" alt="Top Languages" />
+
+<br/>
+
+<!-- Activity Streak Graph (Color-matched to dark mode) -->
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=tahaenasraoui-debug&theme=dark&hide_border=true&background=0d1117&ring=38bdf8&fire=a3e635&currStreakLabel=38bdf8" width="97%" alt="Contribution Streak" />
+
 </div>
 
 ---
 
-### ⚡ About Me
+### 📍 Activity Pulse
 
-- 🎓 **Undergrad**: First-year Mathematics & Computer Science
-- 💻 **Core Focus**: Exploring low-level concepts in **C / C++** and prototyping in **Python**
-- 🐧 **Environment**: Daily-driving Arch Linux, building workflows with Git, Bash, and terminal tooling
-- 🎯 **Current Goals**: Hackathons, open-source contributions, and engineering robust backend systems
-
----
-
-### 🛠 Tech Stack & Tools
-
-**Languages & Systems**
-<p align="left">
-  <img src="https://img.shields.io/badge/C-%2300599C.svg?style=flat-square&logo=c&logoColor=white" alt="C" />
-  <img src="https://img.shields.io/badge/C%2B%2B-%2300599C.svg?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white" alt="Bash" />
-</p>
-
-**Environment & Workflow**
-<p align="left">
-  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" alt="Arch Linux" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white" alt="VS Code" />
-</p>
-
----
-
-### 📊 GitHub Activity
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tahaenasraoui-debug&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tahaenasraoui-debug&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="Top Languages" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tahaenasraoui-debug&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-</div>
-
----
-
-### 🤝 Let's Connect
-
-<p align="left">
-  <a href="https://github.com/tahaenasraoui-debug">
-    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-</p>
+```text
+[Current Rig]   Arch Linux (rolling kernel)
+[Languages]     gcc / clang / python3.12
+[Location]      Rabat, Morocco
+[Status]        Shipping code, solving problems, training.
