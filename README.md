@@ -1,52 +1,86 @@
- SETUP (one time)
-  1. Create a PUBLIC repo named exactly like your username: tahaenasraoui-debug/tahaenasraoui-debug
-  2. Upload this whole folder into it: README.md, assets/, scripts/, .github/
-  3. Actions tab -> "activity" -> Run workflow. This replaces assets/activity.svg with your real calendar.
-  4. Search this file for TODO and fill the gaps.
+<!-- ================================================================= -->
+<!-- PALETTE: Monokai / Linux Terminal Slate                           -->
+<!-- Background: #0d1117 (GitHub Dark default)                        -->
+<!-- Accents: #38bdf8 (Cyan), #a3e635 (Terminal Green), #e2e8f0 (Muted) -->
+<!-- ================================================================= -->
 
-  GitHub strips inline <svg> and data: URIs from READMEs, so the SVGs are committed files
-  in this same repo and referenced with relative paths.
+<div align="center">
 
-  Palette (all in the SVGs): paper #f3eee4, ink #1d1b18, terracotta #c4472b, muted #6f6a60.
-  Dark mode versions are built into each SVG.
--->
+<!-- RAW INLINE SVG HEADER: Zero external image hosting, renders natively everywhere -->
+<svg width="100%" max-width="740" height="150" viewBox="0 0 740 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="740" height="150" rx="10" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="739" height="149" rx="9.5" stroke="#30363d"/>
+  
+  <!-- Window Controls -->
+  <circle cx="28" cy="22" r="5" fill="#f43f5e"/>
+  <circle cx="44" cy="22" r="5" fill="#eab308"/>
+  <circle cx="60" cy="22" r="5" fill="#22c55e"/>
+  <text x="82" y="26" fill="#8b949e" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11">taha@archlinux: ~</text>
 
-<img src="assets/header.svg" alt="Tahary, python / linux / low-level things" width="100%">
+  <!-- Terminal Session -->
+  <text x="28" y="62" fill="#a3e635" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="600">taha@arch:~$</text>
+  <text x="145" y="62" fill="#f0f6fc" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13">whoami --focus</text>
+  
+  <text x="28" y="92" fill="#38bdf8" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">› Mohamed Taha Enasraoui</text>
+  <text x="28" y="114" fill="#8b949e" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12">  Undergrad Math &amp; CS student | building low-level systems &amp; practical tools</text>
+</svg>
 
-## About
+</div>
 
-I'm a CS and maths student who lives on Linux and learns by taking things apart until I can explain why they work.
+<br/>
 
-Python is the language I'm trying to get properly good at, not just functional in. I'm drawn to the low-level side of software: emulation, recompilation, how old games get ported to new platforms.
+### 📟 Context & Working Philosophy
 
-I'm building toward freelance Python work and a strong body of public projects.
+I'm an undergraduate studying Mathematics and Computer Science at Faculté des Sciences de Rabat. I spend most of my time either breaking down algorithmic problems or looking under the hood of operating systems to see how memory, processes, and runtime environments actually behave.
 
-## Right now
+Right now, my day-to-day lives inside an **Arch Linux** environment where I write low-level code in **C/C++** to master foundational mechanics, and **Python** whenever I need to prototype fast, automate repetitive workflows, or build data pipelines. 
 
-- **Python:** daily practice, plus data structures and algorithms on LeetCode.
-- **Projects:** contributing path tweaks to a fork of an open-source macro tool (below). TODO: add your next real project here.
-- **Learning next:** CS50P and the GitHub Foundations cert.
+I care about software that is lean, deterministic, and built to solve tangible problems rather than adding unnecessary layers of abstraction. Outside the terminal, training disciplines like Brazilian Jiu-Jitsu and boxing keeps my head clear and reinforces the same mindset I bring to engineering: consistency, deliberate repetition, and staying calm under pressure.
 
-## What I work with
+---
 
-<img src="assets/stack.svg" alt="Two shelves. On the desk: Python, Linux, Git, DSA, Maths. Next on the list: CS50P, GitHub Foundations, Google STEP prep." width="100%">
+### 🔨 What I'm Building & Focusing On
 
-## Activity
+* **NASA Space Apps Challenge:** Designing an astronaut health telemetry and vital signs monitoring pipeline for high-stakes environments.
+* **Low-Level Mechanics (C / C++):** Writing custom system utilities, exploring memory management, and implementing fundamental data structures from scratch without relying on external libraries.
+* **Scripting & Tooling (Python & Bash):** Crafting daily automation tools, Linux workflow scripts, and rapid data experiments.
+* **Academic Foundation:** Balancing pure mathematical rigor (analysis, discrete structures, and linear algebra) with computational implementation.
 
-<img src="assets/activity.svg" alt="Contribution calendar for the last twelve months" width="100%">
+---
 
-<sub>Built from my real GitHub data by a 100-line script in this repo. Public contributions only.</sub>
+### ⚙️ Tech Stack & Workbench
 
-## Things I've touched
+<!-- Clean terminal-like markdown table instead of dozens of bright mismatched badges -->
+| Layer | Technologies & Tools |
+| :--- | :--- |
+| **Languages** | `C` · `C++` · `Python` · `Bash` |
+| **Environment** | Arch Linux · GNU Coreutils · GDB / Valgrind · Make |
+| **Development** | Git / GitHub · Neovim · VS Code |
+| **Focus Areas** | Systems Programming · Algorithmic Analysis · Automation & Scripting |
 
-| Project | What I did | Status |
-| --- | --- | --- |
-| [NatroMacro fork](https://github.com/tahaenasraoui-debug/NatroMacro) | Editing the Walk From Pine Tree return path (`paths/wf-pinetree.ahk`) on branch `wf-pinetree-tuning` to reduce positional drift. I develop on Linux and the macro needs Windows, so I can't run it myself. | Untested, on my fork only |
-| TODO: your next project | One sentence on the problem, one on what you actually did | TODO |
-| TODO: coursework or CTF writeup | Same format | TODO |
+---
 
-<sub>I'd rather list two honest rows than six padded ones. Add a row only when there is something to read in the repo.</sub>
+### 📊 GitHub Activity & Metric Streams
 
-## Contact
+<div align="center">
 
-TODO: email or LinkedIn, only what you are comfortable having public.
+<!-- Compact stats matched cleanly to GitHub dark-mode background (#0d1117) -->
+<img src="https://github-readme-stats.vercel.app/api?username=tahaenasraoui-debug&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=a3e635&text_color=8b949e" width="48%" alt="Taha's Stats" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tahaenasraoui-debug&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=8b949e" width="48%" alt="Top Languages" />
+
+<br/>
+
+<!-- Activity Streak Graph (Color-matched to dark mode) -->
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=tahaenasraoui-debug&theme=dark&hide_border=true&background=0d1117&ring=38bdf8&fire=a3e635&currStreakLabel=38bdf8" width="97%" alt="Contribution Streak" />
+
+</div>
+
+---
+
+### 📍 Activity Pulse
+
+```text
+[Current Rig]   Arch Linux (rolling kernel)
+[Languages]     gcc / clang / python3.12
+[Location]      Rabat, Morocco
+[Status]        Shipping code, solving problems, training.
