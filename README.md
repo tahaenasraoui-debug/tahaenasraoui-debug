@@ -41,7 +41,6 @@ I care about software that is lean, deterministic, and built to solve tangible p
 
 ### 🔨 What I'm Building & Focusing On
 
-* **NASA Space Apps Challenge:** Designing an astronaut health telemetry and vital signs monitoring pipeline for high-stakes environments.
 * **Low-Level Mechanics (C / C++):** Writing custom system utilities, exploring memory management, and implementing fundamental data structures from scratch without relying on external libraries.
 * **Scripting & Tooling (Python & Bash):** Crafting daily automation tools, Linux workflow scripts, and rapid data experiments.
 * **Academic Foundation:** Balancing pure mathematical rigor (analysis, discrete structures, and linear algebra) with computational implementation.
@@ -50,10 +49,9 @@ I care about software that is lean, deterministic, and built to solve tangible p
 
 ### ⚙️ Tech Stack & Workbench
 
-<!-- Clean terminal-like markdown table instead of dozens of bright mismatched badges -->
 | Layer | Technologies & Tools |
 | :--- | :--- |
-| **Languages** | `C` · `C++` · `Python` · `Bash` |
+| **Languages** | `C` · `C++` · `Python` · `Ruby` · `Bash` · `AutoHotkey` |
 | **Environment** | Arch Linux · GNU Coreutils · GDB / Valgrind · Make |
 | **Development** | Git / GitHub · Neovim · VS Code |
 | **Focus Areas** | Systems Programming · Algorithmic Analysis · Automation & Scripting |
