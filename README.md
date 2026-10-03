@@ -19,7 +19,7 @@
 <table>
   <tr>
     <td align="center" valign="middle">
-      <img src="assets/smeargle.png" width="144" alt="Smeargle" />
+      <img src="smeargle.png" width="144" alt="Smeargle" />
     </td>
     <td valign="middle">
 
@@ -247,7 +247,7 @@ mindmap
 
 <p>
   <a href="https://github.com/tahaenasraoui-debug"><img src="https://img.shields.io/badge/GitHub-tahaenasraoui--debug-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-  <a href="mailto:tahaenasraoui@gmail.com"><img src="https://img.shields.io/badge/Email-your.email@example.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="mailto:tahaenasraoui@gmail.com"><img src="https://img.shields.io/badge/Email-tahaenasraoui@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </p>
 
 <p align="center">
