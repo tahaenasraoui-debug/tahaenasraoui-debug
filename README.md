@@ -151,27 +151,43 @@ Langs    : Python, Bash, AutoHotkey
 <p align="center">
   <a href="https://tahaenasraoui-debug.github.io/tahaenasraoui-debug/resource-map.html"><img src="https://img.shields.io/badge/Open%20the%20interactive%20map-zoom%20%2B%20drag-7aa2f7?style=for-the-badge" alt="Open the interactive map" /></a>
 </p>
+
 ```mermaid
 mindmap
   root((Resources))
     ➗ Math
       Algebra
+        📘 College Algebra OpenStax
       Calculus 1
+        📘 Calculus Vol 1 OpenStax
       Calculus 2
+        📘 Calculus Vol 2 OpenStax
       Calculus 3
+        📘 Calculus Vol 3 OpenStax
       Linear algebra
+        📘 Strang Intro to Linear Algebra
     💻 Computer science
       Python
+        📘 Fluent Python
       C
+        📘 K and R The C Programming Language
       Rust
+        📘 The Rust Programming Language
       Bash
+        📘 The Linux Command Line
       DSA
+        📘 CLRS Introduction to Algorithms
       ML and AI
+        📘 Goodfellow Deep Learning
+      Systems and graphics
+        📘 CSAPP Bryant and OHallaron
     🏋️ Sport
       BJJ
+        📘 Jiu-Jitsu University Ribeiro
       Running
+        📘 Daniels Running Formula
       Hypertrophy
-```
+        📘 Science and Development of Muscle Hypertrophy
 ```
 
 <p align="center"><sub>📘 book &nbsp;|&nbsp; 🌐 website &nbsp;|&nbsp; 🔧 tool &nbsp;|&nbsp; 📄 paper. Open a fold below, or use the interactive map above.</sub></p>
