@@ -6,66 +6,109 @@
 html,body{margin:0;height:100%;background:#1e1e2e;color:#cdd6f4;font:13px system-ui,sans-serif;overflow:hidden}
 svg{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
 .box{position:fixed;background:#181825e6;border:1px solid #313244;border-radius:8px;padding:10px 12px}
-#hud{top:12px;left:12px;line-height:1.9}
-#hud b{display:block;margin-bottom:4px}
+#hud{top:12px;left:12px;line-height:1.9}#hud b{display:block;margin-bottom:4px}
 .lg{cursor:pointer;user-select:none}.lg.off{opacity:.35;text-decoration:line-through}
-i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
-small{color:#6c7086}
+.lg span{display:inline-block;width:16px}
+small{color:#6c7086}#prog{margin-top:4px;color:#a6e3a1}
 #q{margin-top:6px;width:150px;background:#11111b;border:1px solid #313244;border-radius:6px;color:#cdd6f4;padding:5px 8px}
-#btns{top:12px;right:12px;display:flex;gap:6px;padding:6px}
-button{background:#313244;color:#cdd6f4;border:0;border-radius:6px;width:30px;height:30px;font-size:16px;cursor:pointer}
-button:hover{background:#45475a}
-text{fill:#cdd6f4;font-size:11px;pointer-events:none}
-.dim{opacity:.1}
+#btns{top:12px;right:12px;display:flex;gap:6px;padding:6px;flex-wrap:wrap;max-width:140px}
+button{background:#313244;color:#cdd6f4;border:0;border-radius:6px;width:30px;height:30px;font-size:15px;cursor:pointer}
+button:hover{background:#45475a}button.on{background:#2da44e}
+text{fill:#cdd6f4;font-size:11px;pointer-events:none}.dim{opacity:.1}
+path.done{stroke:#a6e3a1;stroke-width:2.5;opacity:.55}
 </style></head><body>
 <div id="hud" class="box"><b>Resource map</b>
-<div class="lg" data-t="book"><i style="background:#1f6feb"></i>Book</div>
-<div class="lg" data-t="site"><i style="background:#2da44e"></i>Website</div>
-<div class="lg" data-t="tool"><i style="background:#f0883e"></i>Tool</div>
-<div class="lg" data-t="paper"><i style="background:#8957e5"></i>Paper</div>
+<div class="lg" data-t="book"><span style="color:#1f6feb">&#9632;</span>Book</div>
+<div class="lg" data-t="site"><span style="color:#2da44e">&#9679;</span>Website / course</div>
+<div class="lg" data-t="tool"><span style="color:#f0883e">&#9670;</span>Tool</div>
+<div class="lg" data-t="paper"><span style="color:#8957e5">&#9650;</span>Paper</div>
 <input id="q" placeholder="Search...">
-<br><small>Scroll or pinch to zoom, drag to pan.<br>Click a resource to open it.<br>Click a topic to zoom in.<br>Click a legend item to hide it.</small></div>
-<div id="btns" class="box"><button id="zi" title="Zoom in">+</button><button id="zo" title="Zoom out">&minus;</button><button id="fit" title="Fit to screen">&#8962;</button></div>
+<div id="prog"></div>
+<small>Click a topic to expand it.<br>Click a resource to open it.<br>Shift-click or right-click marks it done.<br>Scroll or pinch to zoom, drag to pan.</small></div>
+<div id="btns" class="box">
+<button id="zi" title="Zoom in">+</button><button id="zo" title="Zoom out">&minus;</button><button id="fit" title="Fit to screen">&#8962;</button>
+<button id="ex" title="Expand all">&#8862;</button><button id="co" title="Collapse all">&#8863;</button>
+<button id="mk" title="Mark-done mode (for touch screens)">&#10003;</button><button id="rn" title="Random resource I have not done">&#127922;</button></div>
 <svg></svg>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 const C={book:"#1f6feb",site:"#2da44e",tool:"#f0883e",paper:"#8957e5"};
-const T=[
-["Autograd + MNIST","#7aa2f7",[["book","Neural Networks and Deep Learning","http://neuralnetworksanddeeplearning.com/"],["site","Zero to Hero","https://karpathy.ai/zero-to-hero.html"],["site","3Blue1Brown: Neural Networks","https://www.3blue1brown.com/topics/neural-networks"],["tool","micrograd","https://github.com/karpathy/micrograd"],["paper","Autodiff in ML: a survey","https://arxiv.org/abs/1502.05767"]]],
-["GPT from scratch","#bb9af7",[["paper","Attention Is All You Need","https://arxiv.org/abs/1706.03762"],["site","The Illustrated Transformer","https://jalammar.github.io/illustrated-transformer/"],["tool","nanoGPT","https://github.com/karpathy/nanoGPT"],["tool","minbpe","https://github.com/karpathy/minbpe"]]],
-["RL agent","#f38ba8",[["book","Sutton and Barto","http://incompleteideas.net/book/the-book-2nd.html"],["site","Spinning Up","https://spinningup.openai.com/"],["tool","Gymnasium","https://gymnasium.farama.org/"],["paper","DQN Atari","https://arxiv.org/abs/1312.5602"],["paper","PPO","https://arxiv.org/abs/1707.06347"]]],
-["Game Boy emulator","#fab387",[["site","Pan Docs","https://gbdev.io/pandocs/"],["site","CHIP-8 guide","https://tobiasvl.github.io/blog/write-a-chip-8-emulator/"],["site","Opcode table","https://gbdev.io/gb-opcodes/optables/"],["tool","Test ROMs","https://github.com/retrio/gb-test-roms"]]],
-["Ray tracer","#a6e3a1",[["book","Ray Tracing in One Weekend","https://raytracing.github.io/"],["book","PBR Book","https://pbr-book.org/"],["site","Scratchapixel","https://www.scratchapixel.com/"]]],
-["Foundations","#89dceb",[["book","Mathematics for ML","https://mml-book.github.io/"],["book","The Linux Command Line","https://linuxcommand.org/tlcl.php"],["site","Essence of Linear Algebra","https://www.3blue1brown.com/topics/linear-algebra"],["site","NeetCode","https://neetcode.io/"]]]];
-const nodes=[{id:"root",label:"Tahary",r:16,col:"#cdd6f4"}],links=[];
-T.forEach(([n,c,rs],i)=>{nodes.push({id:"t"+i,label:n,r:11,col:c});links.push({source:"root",target:"t"+i});
-rs.forEach(([ty,l,u],j)=>{const id=`r${i}_${j}`;nodes.push({id,label:l,r:6,col:C[ty],url:u,ty});links.push({source:"t"+i,target:id});});});
+const SYM={book:d3.symbolSquare,site:d3.symbolCircle,tool:d3.symbolDiamond,paper:d3.symbolTriangle};
+const D=[
+["Math","#89b4fa",[
+["Algebra",[["site","Khan Academy: Algebra","https://www.khanacademy.org/math/algebra"],["site","Paul's Notes: Algebra","https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx"]]],
+["Calculus 1",[["site","Paul's Notes: Calc I","https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx"],["site","MIT OCW 18.01SC","https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/"],["site","3Blue1Brown: Calculus","https://www.3blue1brown.com/topics/calculus"]]],
+["Calculus 2",[["site","Paul's Notes: Calc II","https://tutorial.math.lamar.edu/Classes/CalcII/CalcII.aspx"],["site","Khan Academy: AP Calc BC","https://www.khanacademy.org/math/ap-calculus-bc"]]],
+["Calculus 3",[["site","Paul's Notes: Calc III","https://tutorial.math.lamar.edu/Classes/CalcIII/CalcIII.aspx"],["site","MIT OCW 18.02SC","https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"],["site","Khan Academy: Multivariable","https://www.khanacademy.org/math/multivariable-calculus"]]],
+["Linear algebra",[["site","3Blue1Brown: Linear Algebra","https://www.3blue1brown.com/topics/linear-algebra"],["site","MIT OCW 18.06 (Strang)","https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/"],["book","Linear Algebra Done Right","https://linear.axler.net/"],["book","Mathematics for ML","https://mml-book.github.io/"]]]]],
+["Computer science","#cba6f7",[
+["Python",[["site","Python Tutorial (official)","https://docs.python.org/3/tutorial/"],["site","CS50P","https://cs50.harvard.edu/python/"],["book","Automate the Boring Stuff","https://automatetheboringstuff.com/"]]],
+["C",[["book","Beej's Guide to C","https://beej.us/guide/bgc/"],["site","CS50x","https://cs50.harvard.edu/x/"]]],
+["Rust",[["book","The Rust Book","https://doc.rust-lang.org/book/"],["tool","Rustlings","https://github.com/rust-lang/rustlings"]]],
+["Bash",[["book","The Linux Command Line","https://linuxcommand.org/tlcl.php"],["site","Bash Guide (Wooledge)","https://mywiki.wooledge.org/BashGuide"],["tool","explainshell","https://explainshell.com/"]]],
+["DSA",[["site","MIT 6.006","https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"],["site","NeetCode","https://neetcode.io/"],["site","cp-algorithms","https://cp-algorithms.com/"],["tool","VisuAlgo","https://visualgo.net/"],["tool","LeetCode","https://leetcode.com/"]]],
+["ML and AI",[["site","Zero to Hero","https://karpathy.ai/zero-to-hero.html"],["book","Neural Networks and Deep Learning","http://neuralnetworksanddeeplearning.com/"],["site","fast.ai","https://course.fast.ai/"],["site","Stanford CS229","https://cs229.stanford.edu/"],["site","Stanford CS231n","https://cs231n.stanford.edu/"],["book","Sutton and Barto","http://incompleteideas.net/book/the-book-2nd.html"],["site","Spinning Up","https://spinningup.openai.com/"],["tool","Gymnasium","https://gymnasium.farama.org/"],["paper","Attention Is All You Need","https://arxiv.org/abs/1706.03762"],["tool","nanoGPT","https://github.com/karpathy/nanoGPT"],["tool","micrograd","https://github.com/karpathy/micrograd"]]],
+["Systems and graphics",[["site","Pan Docs","https://gbdev.io/pandocs/"],["site","CHIP-8 guide","https://tobiasvl.github.io/blog/write-a-chip-8-emulator/"],["book","Ray Tracing in One Weekend","https://raytracing.github.io/"],["site","Scratchapixel","https://www.scratchapixel.com/"]]]]],
+["Sport","#a6e3a1",[
+["BJJ",[["site","Grapplearts","https://www.grapplearts.com/"],["site","FloGrappling","https://www.flograppling.com/"],["site","BJJ Fanatics","https://bjjfanatics.com/"],["site","IBJJF","https://ibjjf.com/"]]],
+["Running",[["site","Hal Higdon","https://www.halhigdon.com/"],["tool","VDOT O2 (Daniels)","https://vdoto2.com/"],["site","80/20 Endurance","https://www.8020endurance.com/"],["tool","Strava","https://www.strava.com/"]]],
+["Hypertrophy",[["site","Stronger By Science","https://www.strongerbyscience.com/"],["site","Renaissance Periodization","https://rpstrength.com/"],["site","Menno Henselmans","https://mennohenselmans.com/"],["site","Examine","https://examine.com/"],["site","Jeff Nippard","https://jeffnippard.com/"],["tool","Hevy","https://www.hevyapp.com/"]]]]]];
+const nodes=[{id:"root",label:"Tahary",r:17,col:"#cdd6f4",lvl:0}],links=[];
+D.forEach(([cn,cc,tops],i)=>{const cid="c"+i;nodes.push({id:cid,p:"root",label:cn,r:13,col:cc,lvl:1});links.push({source:"root",target:cid});
+tops.forEach(([tn,rs],j)=>{const tid=cid+"_"+j;nodes.push({id:tid,p:cid,label:tn,r:9,col:cc,lvl:2});links.push({source:cid,target:tid});
+rs.forEach(([ty,l,u],k)=>{const id=tid+"_"+k;nodes.push({id,p:tid,label:l,r:5.5,col:C[ty],url:u,ty,lvl:3});links.push({source:tid,target:id});});});});
+const byId=Object.fromEntries(nodes.map(n=>[n.id,n])),sid=x=>typeof x==="object"?x.id:x;
+const open=new Set(),hidden=new Set();let done=new Set(),markMode=false,fitOnce=true;
+try{done=new Set(JSON.parse(localStorage.getItem("rm-done")||"[]"))}catch(e){}
+const save=()=>{try{localStorage.setItem("rm-done",JSON.stringify([...done]))}catch(e){}};
 const svg=d3.select("svg"),g=svg.append("g");
-const zoom=d3.zoom().scaleExtent([.2,5]).on("zoom",e=>g.attr("transform",e.transform));
+const zoom=d3.zoom().scaleExtent([.15,5]).on("zoom",e=>g.attr("transform",e.transform));
 svg.call(zoom);
-const w=innerWidth,h=innerHeight;
-const sim=d3.forceSimulation(nodes).force("l",d3.forceLink(links).id(d=>d.id).distance(d=>d.source.id=="root"?120:60)).force("c",d3.forceManyBody().strength(-260)).force("m",d3.forceCenter(w/2,h/2)).force("x",d3.forceCollide(d=>d.r+14));
-const L=g.append("g").attr("stroke","#45475a").selectAll("line").data(links).join("line");
-const N=g.append("g").selectAll("g").data(nodes).join("g").style("cursor",d=>d.url?"pointer":"grab")
-.call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y}).on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y}).on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=d.fy=null}))
-.on("click",(e,d)=>{if(e.defaultPrevented)return;
- if(d.url)window.open(d.url,"_blank","noopener");
- else if(d.id!="root")svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity.translate(innerWidth/2-2*d.x,innerHeight/2-2*d.y).scale(2));})
-.on("mouseover",(e,d)=>{const k=new Set([d.id]);links.forEach(l=>{if(l.source===d)k.add(l.target.id);if(l.target===d)k.add(l.source.id)});N.classed("dim",n=>!k.has(n.id));L.classed("dim",l=>l.source!==d&&l.target!==d)})
-.on("mouseout",()=>{N.classed("dim",false);L.classed("dim",false);search()});
-N.append("circle").attr("r",d=>d.r).attr("fill",d=>d.col);
-N.append("text").attr("dy",d=>-d.r-4).attr("text-anchor","middle").text(d=>d.label);
-N.append("title").text(d=>d.url||d.label);
+const sim=d3.forceSimulation([]).force("l",d3.forceLink([]).id(d=>d.id).distance(d=>[0,190,100,52][d.target.lvl])).force("c",d3.forceManyBody().strength(d=>[-900,-700,-260,-90][d.lvl])).force("m",d3.forceCenter(innerWidth/2,innerHeight/2)).force("x",d3.forceCollide(d=>d.r+(d.lvl==3?10:16)));
+const gL=g.append("g").attr("stroke","#45475a"),gN=g.append("g");
+let vn=[],vl=[],L,N;
+const vis=n=>n.lvl<3||(open.has(n.p)&&!hidden.has(n.ty));
+const zoomTo=(d,k)=>svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity.translate(innerWidth/2-k*d.x,innerHeight/2-k*d.y).scale(k));
+function lbl(d){if(d.lvl==3)return(done.has(d.id)?"\u2713 ":"")+d.label;
+ if(d.lvl==2){const k=nodes.filter(x=>x.p==d.id);return d.label+" ("+k.filter(x=>done.has(x.id)).length+"/"+k.length+")"}return d.label}
+function toggleDone(d){done.has(d.id)?done.delete(d.id):done.add(d.id);save();refresh()}
+function refresh(){N.select("path").classed("done",d=>done.has(d.id));N.select("text").text(lbl);
+ N.select("title").text(d=>d.url?d.url+"\nShift-click or right-click to mark done":d.label);
+ const t=nodes.filter(n=>n.lvl==3);document.getElementById("prog").textContent="Done: "+t.filter(n=>done.has(n.id)).length+" / "+t.length}
+function build(enter){const e=enter.append("g").attr("class","n").style("cursor",d=>d.lvl==3?"pointer":"grab")
+.call(d3.drag().on("start",(ev,d)=>{if(!ev.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y}).on("drag",(ev,d)=>{d.fx=ev.x;d.fy=ev.y}).on("end",(ev,d)=>{if(!ev.active)sim.alphaTarget(0);d.fx=d.fy=null}))
+.on("click",(ev,d)=>{if(ev.defaultPrevented)return;
+ if(d.lvl==3){if(markMode||ev.shiftKey)toggleDone(d);else window.open(d.url,"_blank","noopener")}
+ else if(d.lvl==2){open.has(d.id)?open.delete(d.id):open.add(d.id);render();if(open.has(d.id))setTimeout(()=>zoomTo(d,1.8),500)}
+ else if(d.lvl==1)zoomTo(d,.9)})
+.on("contextmenu",(ev,d)=>{ev.preventDefault();if(d.lvl==3)toggleDone(d)})
+.on("mouseover",(ev,d)=>{const k=new Set([d.id]);vl.forEach(l=>{if(l.source===d)k.add(l.target.id);if(l.target===d)k.add(l.source.id)});N.classed("dim",n=>!k.has(n.id));L.classed("dim",l=>l.source!==d&&l.target!==d)})
+.on("mouseout",()=>{N.classed("dim",false);L.classed("dim",false);search(true)});
+e.append("path").attr("d",d=>d3.symbol(d.ty?SYM[d.ty]:d3.symbolCircle,Math.PI*d.r*d.r*(d.ty?1.3:1))()).attr("fill",d=>d.col);
+e.append("text").attr("dy",d=>-d.r-5).attr("text-anchor","middle");e.append("title");return e}
+function render(){vn=nodes.filter(vis);const ids=new Set(vn.map(n=>n.id));
+ vl=links.filter(l=>ids.has(sid(l.source))&&ids.has(sid(l.target)));
+ vn.forEach(n=>{if(n.x==null){const p=byId[n.p]||{};n.x=(p.x||innerWidth/2)+Math.random()*20-10;n.y=(p.y||innerHeight/2)+Math.random()*20-10}});
+ sim.nodes(vn);sim.force("l").links(vl);
+ L=gL.selectAll("line").data(vl,d=>sid(d.source)+">"+sid(d.target)).join("line");
+ N=gN.selectAll("g.n").data(vn,d=>d.id).join(build);
+ refresh();sim.alpha(.7).restart()}
 sim.on("tick",()=>{L.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);N.attr("transform",d=>`translate(${d.x},${d.y})`)});
 function fit(){const b=g.node().getBBox();if(!b.width)return;const k=Math.min(innerWidth/(b.width+160),innerHeight/(b.height+160),1.6);
- svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity.translate(innerWidth/2-k*(b.x+b.width/2),innerHeight/2-k*(b.y+b.height/2)).scale(k));}
-sim.on("end",fit);setTimeout(fit,1800);
-zi.onclick=()=>svg.transition().call(zoom.scaleBy,1.5);
-zo.onclick=()=>svg.transition().call(zoom.scaleBy,1/1.5);
+ svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity.translate(innerWidth/2-k*(b.x+b.width/2),innerHeight/2-k*(b.y+b.height/2)).scale(k))}
+sim.on("end",()=>{if(fitOnce){fitOnce=false;fit()}});
+function search(quiet){const s=q.value.trim().toLowerCase();
+ if(s&&!quiet){let ch=false;nodes.forEach(n=>{if(n.lvl==3&&n.label.toLowerCase().includes(s)&&!open.has(n.p)){open.add(n.p);ch=true}});if(ch)render()}
+ N.classed("dim",d=>s&&d.id!="root"&&!d.label.toLowerCase().includes(s));L.classed("dim",!!s)}
+q.oninput=()=>search();
+zi.onclick=()=>svg.transition().call(zoom.scaleBy,1.5);zo.onclick=()=>svg.transition().call(zoom.scaleBy,1/1.5);
 document.getElementById("fit").onclick=fit;
-const hidden=new Set();
-document.querySelectorAll(".lg").forEach(el=>el.onclick=()=>{const t=el.dataset.t;hidden.has(t)?hidden.delete(t):hidden.add(t);el.classList.toggle("off");
- N.style("display",d=>hidden.has(d.ty)?"none":null);L.style("display",l=>hidden.has(l.target.ty)?"none":null);});
-function search(){const s=q.value.trim().toLowerCase();N.classed("dim",d=>s&&d.id!="root"&&!d.label.toLowerCase().includes(s));L.classed("dim",!!s);}
-q.oninput=search;
+ex.onclick=()=>{nodes.filter(n=>n.lvl==2).forEach(n=>open.add(n.id));render();setTimeout(fit,1800)};
+co.onclick=()=>{open.clear();render();setTimeout(fit,900)};
+mk.onclick=()=>{markMode=!markMode;mk.classList.toggle("on",markMode)};
+rn.onclick=()=>{const c=nodes.filter(n=>n.lvl==3&&!done.has(n.id)&&!hidden.has(n.ty));if(!c.length)return;
+ const n=c[Math.floor(Math.random()*c.length)];open.add(n.p);render();
+ setTimeout(()=>{zoomTo(n,2.2);N.classed("dim",x=>x.id!==n.id&&x.id!==n.p);setTimeout(()=>N.classed("dim",false),2500)},1000)};
+document.querySelectorAll(".lg").forEach(el=>el.onclick=()=>{const t=el.dataset.t;hidden.has(t)?hidden.delete(t):hidden.add(t);el.classList.toggle("off");render()});
+render();setTimeout(()=>{if(fitOnce){fitOnce=false;fit()}},2500);
 </script></body></html>
