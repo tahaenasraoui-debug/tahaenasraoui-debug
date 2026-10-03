@@ -43,7 +43,7 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
 </p>
 
-## 【 tahafetch 】
+## 【 neofetch 】
 
 <table>
   <tr>
