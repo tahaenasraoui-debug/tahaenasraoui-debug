@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/smeargle.gif" width="220" alt="Smeargle painting a rainbow" />
+  <img src="smeargle.gif" width="220" alt="Smeargle painting a rainbow" />
 </p>
 
 <p align="center"><i>alien yet familiar</i></p>
@@ -52,7 +52,7 @@
 <table>
   <tr>
     <td align="center" valign="middle">
-      <img src="assets/smeargle.png" width="144" alt="Smeargle" />
+      <img src="smeargle.png" width="144" alt="Smeargle" />
     </td>
     <td valign="middle">
 
@@ -151,6 +151,29 @@ Langs    : Python, Bash, AutoHotkey
 <p align="center">
   <a href="https://tahaenasraoui-debug.github.io/tahaenasraoui-debug/resource-map.html"><img src="https://img.shields.io/badge/Open%20the%20interactive%20map-zoom%20%2B%20drag-7aa2f7?style=for-the-badge" alt="Open the interactive map" /></a>
 </p>
+
+```mermaid
+mindmap
+  root((Resources))
+    🧬 Autograd
+      📘 Nielsen book
+      🔧 micrograd
+    🤖 GPT
+      📄 Attention paper
+      🔧 nanoGPT
+    🎮 RL
+      📘 Sutton and Barto
+      🔧 Gymnasium
+    🕹️ Game Boy
+      🌐 Pan Docs
+      🔧 Test ROMs
+    💡 Ray tracer
+      📘 One Weekend
+      🌐 Scratchapixel
+    📐 Foundations
+      📘 Math for ML
+      🌐 NeetCode
+```
 
 <p align="center"><sub>📘 book &nbsp;|&nbsp; 🌐 website &nbsp;|&nbsp; 🔧 tool &nbsp;|&nbsp; 📄 paper. Open a fold below, or use the interactive map above.</sub></p>
 
@@ -275,7 +298,7 @@ Langs    : Python, Bash, AutoHotkey
 ## 【 Bonus 】
 
 <p align="center">
-  <img src="assets/funny.gif" width="400" alt="funny gif" />
+  <img src="funny.gif" width="400" alt="funny gif" />
 </p>
 
 <p align="center">
