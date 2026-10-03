@@ -151,28 +151,27 @@ Langs    : Python, Bash, AutoHotkey
 <p align="center">
   <a href="https://tahaenasraoui-debug.github.io/tahaenasraoui-debug/resource-map.html"><img src="https://img.shields.io/badge/Open%20the%20interactive%20map-zoom%20%2B%20drag-7aa2f7?style=for-the-badge" alt="Open the interactive map" /></a>
 </p>
-
 ```mermaid
 mindmap
   root((Resources))
-    🧬 Autograd
-      📘 Nielsen book
-      🔧 micrograd
-    🤖 GPT
-      📄 Attention paper
-      🔧 nanoGPT
-    🎮 RL
-      📘 Sutton and Barto
-      🔧 Gymnasium
-    🕹️ Game Boy
-      🌐 Pan Docs
-      🔧 Test ROMs
-    💡 Ray tracer
-      📘 One Weekend
-      🌐 Scratchapixel
-    📐 Foundations
-      📘 Math for ML
-      🌐 NeetCode
+    ➗ Math
+      Algebra
+      Calculus 1
+      Calculus 2
+      Calculus 3
+      Linear algebra
+    💻 Computer science
+      Python
+      C
+      Rust
+      Bash
+      DSA
+      ML and AI
+    🏋️ Sport
+      BJJ
+      Running
+      Hypertrophy
+```
 ```
 
 <p align="center"><sub>📘 book &nbsp;|&nbsp; 🌐 website &nbsp;|&nbsp; 🔧 tool &nbsp;|&nbsp; 📄 paper. Open a fold below, or use the interactive map above.</sub></p>
