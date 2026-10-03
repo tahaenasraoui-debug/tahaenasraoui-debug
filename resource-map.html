@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resource map | Tahary</title>
+<style>
+html,body{margin:0;height:100%;background:#1e1e2e;color:#cdd6f4;font:13px system-ui,sans-serif;overflow:hidden}
+svg{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+.box{position:fixed;background:#181825e6;border:1px solid #313244;border-radius:8px;padding:10px 12px}
+#hud{top:12px;left:12px;line-height:1.9}
+#hud b{display:block;margin-bottom:4px}
+.lg{cursor:pointer;user-select:none}.lg.off{opacity:.35;text-decoration:line-through}
+i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+small{color:#6c7086}
+#q{margin-top:6px;width:150px;background:#11111b;border:1px solid #313244;border-radius:6px;color:#cdd6f4;padding:5px 8px}
+#btns{top:12px;right:12px;display:flex;gap:6px;padding:6px}
+button{background:#313244;color:#cdd6f4;border:0;border-radius:6px;width:30px;height:30px;font-size:16px;cursor:pointer}
+button:hover{background:#45475a}
+text{fill:#cdd6f4;font-size:11px;pointer-events:none}
+.dim{opacity:.1}
+</style></head><body>
+<div id="hud" class="box"><b>Resource map</b>
+<div class="lg" data-t="book"><i style="background:#1f6feb"></i>Book</div>
+<div class="lg" data-t="site"><i style="background:#2da44e"></i>Website</div>
+<div class="lg" data-t="tool"><i style="background:#f0883e"></i>Tool</div>
+<div class="lg" data-t="paper"><i style="background:#8957e5"></i>Paper</div>
+<input id="q" placeholder="Search...">
+<br><small>Scroll or pinch to zoom, drag to pan.<br>Click a resource to open it.<br>Click a topic to zoom in.<br>Click a legend item to hide it.</small></div>
+<div id="btns" class="box"><button id="zi" title="Zoom in">+</button><button id="zo" title="Zoom out">&minus;</button><button id="fit" title="Fit to screen">&#8962;</button></div>
+<svg></svg>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const C={book:"#1f6feb",site:"#2da44e",tool:"#f0883e",paper:"#8957e5"};
+const T=[
+["Autograd + MNIST","#7aa2f7",[["book","Neural Networks and Deep Learning","http://neuralnetworksanddeeplearning.com/"],["site","Zero to Hero","https://karpathy.ai/zero-to-hero.html"],["site","3Blue1Brown: Neural Networks","https://www.3blue1brown.com/topics/neural-networks"],["tool","micrograd","https://github.com/karpathy/micrograd"],["paper","Autodiff in ML: a survey","https://arxiv.org/abs/1502.05767"]]],
+["GPT from scratch","#bb9af7",[["paper","Attention Is All You Need","https://arxiv.org/abs/1706.03762"],["site","The Illustrated Transformer","https://jalammar.github.io/illustrated-transformer/"],["tool","nanoGPT","https://github.com/karpathy/nanoGPT"],["tool","minbpe","https://github.com/karpathy/minbpe"]]],
+["RL agent","#f38ba8",[["book","Sutton and Barto","http://incompleteideas.net/book/the-book-2nd.html"],["site","Spinning Up","https://spinningup.openai.com/"],["tool","Gymnasium","https://gymnasium.farama.org/"],["paper","DQN Atari","https://arxiv.org/abs/1312.5602"],["paper","PPO","https://arxiv.org/abs/1707.06347"]]],
+["Game Boy emulator","#fab387",[["site","Pan Docs","https://gbdev.io/pandocs/"],["site","CHIP-8 guide","https://tobiasvl.github.io/blog/write-a-chip-8-emulator/"],["site","Opcode table","https://gbdev.io/gb-opcodes/optables/"],["tool","Test ROMs","https://github.com/retrio/gb-test-roms"]]],
+["Ray tracer","#a6e3a1",[["book","Ray Tracing in One Weekend","https://raytracing.github.io/"],["book","PBR Book","https://pbr-book.org/"],["site","Scratchapixel","https://www.scratchapixel.com/"]]],
+["Foundations","#89dceb",[["book","Mathematics for ML","https://mml-book.github.io/"],["book","The Linux Command Line","https://linuxcommand.org/tlcl.php"],["site","Essence of Linear Algebra","https://www.3blue1brown.com/topics/linear-algebra"],["site","NeetCode","https://neetcode.io/"]]]];
+const nodes=[{id:"root",label:"Tahary",r:16,col:"#cdd6f4"}],links=[];
+T.forEach(([n,c,rs],i)=>{nodes.push({id:"t"+i,label:n,r:11,col:c});links.push({source:"root",target:"t"+i});
+rs.forEach(([ty,l,u],j)=>{const id=`r${i}_${j}`;nodes.push({id,label:l,r:6,col:C[ty],url:u,ty});links.push({source:"t"+i,target:id});});});
+const svg=d3.select("svg"),g=svg.append("g");
+const zoom=d3.zoom().scaleExtent([.2,5]).on("zoom",e=>g.attr("transform",e.transform));
+svg.call(zoom);
+const w=innerWidth,h=innerHeight;
+const sim=d3.forceSimulation(nodes).force("l",d3.forceLink(links).id(d=>d.id).distance(d=>d.source.id=="root"?120:60)).force("c",d3.forceManyBody().strength(-260)).force("m",d3.forceCenter(w/2,h/2)).force("x",d3.forceCollide(d=>d.r+14));
+const L=g.append("g").attr("stroke","#45475a").selectAll("line").data(links).join("line");
+const N=g.append("g").selectAll("g").data(nodes).join("g").style("cursor",d=>d.url?"pointer":"grab")
+.call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y}).on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y}).on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=d.fy=null}))
+.on("click",(e,d)=>{if(e.defaultPrevented)return;
+ if(d.url)window.open(d.url,"_blank","noopener");
+ else if(d.id!="root")svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity.translate(innerWidth/2-2*d.x,innerHeight/2-2*d.y).scale(2));})
+.on("mouseover",(e,d)=>{const k=new Set([d.id]);links.forEach(l=>{if(l.source===d)k.add(l.target.id);if(l.target===d)k.add(l.source.id)});N.classed("dim",n=>!k.has(n.id));L.classed("dim",l=>l.source!==d&&l.target!==d)})
+.on("mouseout",()=>{N.classed("dim",false);L.classed("dim",false);search()});
+N.append("circle").attr("r",d=>d.r).attr("fill",d=>d.col);
+N.append("text").attr("dy",d=>-d.r-4).attr("text-anchor","middle").text(d=>d.label);
+N.append("title").text(d=>d.url||d.label);
+sim.on("tick",()=>{L.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);N.attr("transform",d=>`translate(${d.x},${d.y})`)});
+function fit(){const b=g.node().getBBox();if(!b.width)return;const k=Math.min(innerWidth/(b.width+160),innerHeight/(b.height+160),1.6);
+ svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity.translate(innerWidth/2-k*(b.x+b.width/2),innerHeight/2-k*(b.y+b.height/2)).scale(k));}
+sim.on("end",fit);setTimeout(fit,1800);
+zi.onclick=()=>svg.transition().call(zoom.scaleBy,1.5);
+zo.onclick=()=>svg.transition().call(zoom.scaleBy,1/1.5);
+document.getElementById("fit").onclick=fit;
+const hidden=new Set();
+document.querySelectorAll(".lg").forEach(el=>el.onclick=()=>{const t=el.dataset.t;hidden.has(t)?hidden.delete(t):hidden.add(t);el.classList.toggle("off");
+ N.style("display",d=>hidden.has(d.ty)?"none":null);L.style("display",l=>hidden.has(l.target.ty)?"none":null);});
+function search(){const s=q.value.trim().toLowerCase();N.classed("dim",d=>s&&d.id!="root"&&!d.label.toLowerCase().includes(s));L.classed("dim",!!s);}
+q.oninput=search;
+</script></body></html>
