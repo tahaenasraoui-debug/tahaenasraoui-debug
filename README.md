@@ -23,11 +23,11 @@
 <p align="center">
   <a href="https://github.com/tahaenasraoui-debug"><img src="https://img.shields.io/badge/GitHub-tahaenasraoui--debug-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
   <a href="mailto:tahaenasraoui@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
-  <img src="https://komarev.com/ghpvc/?username=tahaenasraoui-debug&label=Profile%20views&color=7aa2f7&style=flat-square" alt= />
+  <img src="https://komarev.com/ghpvc/?username=tahaenasraoui-debug&label=Profile%20views&color=7aa2f7&style=flat-square" 
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" >
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
 </p>
 
 ## 【 About 】
@@ -47,7 +47,7 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
 </p>
 
-## 【 pokefetch 】
+## 【 neofetch 】
 
 <table>
   <tr>
@@ -74,7 +74,7 @@ Langs    : Python, Bash, AutoHotkey
 </tr>
 </table>
 
-<p>🟥 🟧 🟨 🟩 🟦 🟪 &nbsp;<code>/give @a 7 dragon balls</code></p>
+
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
@@ -152,8 +152,7 @@ Langs    : Python, Bash, AutoHotkey
   <a href="https://tahaenasraoui-debug.github.io/tahaenasraoui-debug/resource-map.html"><img src="https://img.shields.io/badge/Open%20the%20interactive%20map-zoom%20%2B%20drag-7aa2f7?style=for-the-badge" alt="Open the interactive map" /></a>
 </p>
 
-
-<sub>📘 book &nbsp;|&nbsp; 🌐 website &nbsp;|&nbsp; 🔧 tool &nbsp;|&nbsp; 📄 paper. Every link is in the folds below and on the interactive map.</sub>
+<p align="center"><sub>📘 book &nbsp;|&nbsp; 🌐 website &nbsp;|&nbsp; 🔧 tool &nbsp;|&nbsp; 📄 paper. Open a fold below, or use the interactive map above.</sub></p>
 
 <details>
 <summary><b>🧬 Autograd and MNIST</b></summary>
@@ -272,16 +271,12 @@ Langs    : Python, Bash, AutoHotkey
   <a href="#top"><img src="https://img.shields.io/badge/-Back%20to%20Top-7aa2f7?style=flat-square" alt="Back to top" /></a>
 </p>
 
-<!--
-FUNNY GIF SLOT: upload your gif to assets/funny.gif, then remove the comment markers
-and this note so the Bonus section below shows up.
 
 ## 【 Bonus 】
 
 <p align="center">
   <img src="assets/funny.gif" width="400" alt="funny gif" />
 </p>
--->
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Pacifico&size=18&color=7AA2F7&center=true&width=650&height=60&lines=Thanks+for+visiting!;Take+a+look+at+my+repositories;Stay+curious" alt="thanks" />
