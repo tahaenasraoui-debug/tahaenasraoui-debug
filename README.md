@@ -281,7 +281,7 @@ mindmap
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tahaenasraoui-debug&theme=tokyo-night&hide_border=true&area=true" alt="activity graph" />
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D Activity Graph" />
 </p>
 
 ## 【 Contributions 】
