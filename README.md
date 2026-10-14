@@ -12,7 +12,7 @@
   <img src="smeargle.gif" width="220" alt="Smeargle painting a rainbow" />
 </p>
 
-<p align="center"><i>alien yet familiar</i></p>
+<p align="center"><i>Alien yet familiar</i></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Studying-Math--Info%20%40%20FSR%20Rabat-1f6feb?style=for-the-badge" alt="Math-Info" />
