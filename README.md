@@ -47,8 +47,6 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
 </p>
 
-## 【 neofetch 】
-
 <table>
   <tr>
     <td align="center" valign="middle">
@@ -146,122 +144,6 @@ Langs    : Python, Bash, AutoHotkey
   </tr>
 </table>
 
-## 【 Resource map 】
-
-<p align="center">
-  <a href="https://tahaenasraoui-debug.github.io/tahaenasraoui-debug/resource-map.html"><img src="https://img.shields.io/badge/Open%20the%20interactive%20map-zoom%20%2B%20drag-7aa2f7?style=for-the-badge" alt="Open the interactive map" /></a>
-</p>
-
-```mermaid
-mindmap
-  root((Resources))
-    ➗ Math
-      Algebra
-        📘 College Algebra OpenStax
-      Calculus 1
-        📘 Calculus Vol 1 OpenStax
-      Calculus 2
-        📘 Calculus Vol 2 OpenStax
-      Calculus 3
-        📘 Calculus Vol 3 OpenStax
-      Linear algebra
-        📘 Strang Intro to Linear Algebra
-    💻 Computer science
-      Python
-        📘 Fluent Python
-      C
-        📘 K and R The C Programming Language
-      Rust
-        📘 The Rust Programming Language
-      Bash
-        📘 The Linux Command Line
-      DSA
-        📘 CLRS Introduction to Algorithms
-      ML and AI
-        📘 Goodfellow Deep Learning
-      Systems and graphics
-        📘 CSAPP Bryant and OHallaron
-    🏋️ Sport
-      BJJ
-        📘 Jiu-Jitsu University Ribeiro
-      Running
-        📘 Daniels Running Formula
-      Hypertrophy
-        📘 Science and Development of Muscle Hypertrophy
-```
-
-<p align="center"><sub>📘 book &nbsp;|&nbsp; 🌐 website &nbsp;|&nbsp; 🔧 tool &nbsp;|&nbsp; 📄 paper. Open a fold below, or use the interactive map above.</sub></p>
-
-<details>
-<summary><b>🧬 Autograd and MNIST</b></summary>
-
-| Type | Resource |
-| --- | --- |
-| ![Book](https://img.shields.io/badge/-Book-1f6feb?style=flat-square) | [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [3Blue1Brown: Neural Networks](https://www.3blue1brown.com/topics/neural-networks) |
-| ![Tool](https://img.shields.io/badge/-Tool-f0883e?style=flat-square) | [micrograd](https://github.com/karpathy/micrograd) |
-| ![Paper](https://img.shields.io/badge/-Paper-8957e5?style=flat-square) | [Automatic differentiation in machine learning: a survey](https://arxiv.org/abs/1502.05767) |
-
-</details>
-
-<details>
-<summary><b>🤖 GPT from scratch</b></summary>
-
-| Type | Resource |
-| --- | --- |
-| ![Paper](https://img.shields.io/badge/-Paper-8957e5?style=flat-square) | [Attention Is All You Need](https://arxiv.org/abs/1706.03762) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) |
-| ![Tool](https://img.shields.io/badge/-Tool-f0883e?style=flat-square) | [nanoGPT](https://github.com/karpathy/nanoGPT) |
-| ![Tool](https://img.shields.io/badge/-Tool-f0883e?style=flat-square) | [minbpe](https://github.com/karpathy/minbpe) |
-
-</details>
-
-<details>
-<summary><b>🎮 RL agent for retro games</b></summary>
-
-| Type | Resource |
-| --- | --- |
-| ![Book](https://img.shields.io/badge/-Book-1f6feb?style=flat-square) | [Reinforcement Learning: An Introduction (Sutton and Barto)](http://incompleteideas.net/book/the-book-2nd.html) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [Spinning Up in Deep RL](https://spinningup.openai.com/) |
-| ![Tool](https://img.shields.io/badge/-Tool-f0883e?style=flat-square) | [Gymnasium](https://gymnasium.farama.org/) |
-| ![Paper](https://img.shields.io/badge/-Paper-8957e5?style=flat-square) | [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602) |
-| ![Paper](https://img.shields.io/badge/-Paper-8957e5?style=flat-square) | [Proximal Policy Optimization](https://arxiv.org/abs/1707.06347) |
-
-</details>
-
-<details>
-<summary><b>🕹️ Game Boy emulator</b></summary>
-
-| Type | Resource |
-| --- | --- |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [Pan Docs](https://gbdev.io/pandocs/) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [Guide to making a CHIP-8 emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [Game Boy opcode table](https://gbdev.io/gb-opcodes/optables/) |
-| ![Tool](https://img.shields.io/badge/-Tool-f0883e?style=flat-square) | [Game Boy test ROMs (Blargg and others)](https://github.com/retrio/gb-test-roms) |
-
-</details>
-
-<details>
-<summary><b>💡 Ray tracer</b></summary>
-
-| Type | Resource |
-| --- | --- |
-| ![Book](https://img.shields.io/badge/-Book-1f6feb?style=flat-square) | [Ray Tracing in One Weekend](https://raytracing.github.io/) |
-| ![Book](https://img.shields.io/badge/-Book-1f6feb?style=flat-square) | [Physically Based Rendering](https://pbr-book.org/) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [Scratchapixel](https://www.scratchapixel.com/) |
-
-</details>
-
-<details>
-<summary><b>📐 Foundations</b></summary>
-
-| Type | Resource |
-| --- | --- |
-| ![Book](https://img.shields.io/badge/-Book-1f6feb?style=flat-square) | [Mathematics for Machine Learning](https://mml-book.github.io/) |
-| ![Book](https://img.shields.io/badge/-Book-1f6feb?style=flat-square) | [The Linux Command Line](https://linuxcommand.org/tlcl.php) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [3Blue1Brown: Essence of Linear Algebra](https://www.3blue1brown.com/topics/linear-algebra) |
-| ![Site](https://img.shields.io/badge/-Site-2da44e?style=flat-square) | [NeetCode](https://neetcode.io/) |
 
 </details>
 
