@@ -8,9 +8,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=38&duration=3000&pause=1500&color=7AA2F7&center=true&vCenter=true&width=700&height=70&lines=Hi%2C+I%27m+Tahary;alien+yet+familiar;Math+%26+CS+%40+FSR+Rabat" alt="Tahary" />
 </p>
 
-<p align="center">
-  <img src="smeargle.gif" width="220" alt="Smeargle painting a rainbow" />
-</p>
 
 <p align="center"><i>Alien yet familiar</i></p>
 
@@ -30,22 +27,6 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
 </p>
 
-## 【 About 】
-
-> [!NOTE]
-> 🎓 Studying Mathématiques-Informatique at the Faculté des Sciences de Rabat.
-> 🐧 Linux daily driver, comfortable in the terminal.
-
-> [!IMPORTANT]
-> 📚 Practicing data structures and algorithms.
-> 🔬 Interested in low-level systems and ML internals: how the thing works, not just which library to call.
-
-> [!TIP]
-> 🎮 Retro gaming homebrew on the side: RetroArch setups, N64 recompilation research, PS Vita and 3DS software.
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7aa2f7,100:bb9af7&height=3" width="100%" alt="" />
-</p>
 
 <table>
   <tr>
