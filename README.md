@@ -84,14 +84,14 @@ Langs    : Python, Bash, AutoHotkey
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🧬 Deep learning framework from scratch</h3>
+      <h3> Deep learning framework from scratch</h3>
       A small autograd engine with hand-written backpropagation, then a NumPy-only neural network trained on MNIST. No PyTorch in the core, with a benchmark against the same model written in PyTorch.
       <br><br>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
       <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
     </td>
     <td width="50%" valign="top">
-      <h3>🤖 GPT from scratch</h3>
+      <h3> GPT from scratch</h3>
       A byte-pair-encoding tokenizer and a small decoder-only transformer, trained on a text corpus I collect myself. Covers attention, positional encoding, and the training loop, all written by hand.
       <br><br>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
@@ -100,14 +100,14 @@ Langs    : Python, Bash, AutoHotkey
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎮 RL agent that plays retro games</h3>
+      <h3> RL agent that plays retro games</h3>
       A DQN or PPO agent trained to beat a classic game through an emulator, with training curves and replays of the agent improving over time.
       <br><br>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
       <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
     </td>
     <td width="50%" valign="top">
-      <h3>🕹️ Game Boy emulator</h3>
+      <h3> Game Boy emulator</h3>
       Starting with CHIP-8 to learn the fetch-decode-execute loop, then a Game Boy emulator in C or Rust that boots and runs real ROMs. Low-level systems work, which I'm drawn to through retro gaming.
       <br><br>
       <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C" />
@@ -116,7 +116,7 @@ Langs    : Python, Bash, AutoHotkey
   </tr>
   <tr>
     <td colspan="2" valign="top">
-      <h3>💡 Ray tracer from scratch</h3>
+      <h3> Ray tracer from scratch</h3>
       A path tracer that renders scenes with spheres, reflections, refraction, soft shadows and depth of field, written from first principles with vector math and no graphics library. The output is an image gallery that shows each feature as it gets added.
       <br><br>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
