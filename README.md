@@ -79,18 +79,3 @@
 </table>
 
 <br>
-
-### `~/telemetry`
-
-<div align="center">
-  <img height="165" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=tahaenasraoui-debug&theme=tokyonight" alt="GitHub Stats" />
-  <img height="165" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=tahaenasraoui-debug&theme=tokyonight" alt="Top Languages" />
-</div>
-
-<div align="center">
-  <img height="165" src="https://streak-stats.demolab.com/?user=tahaenasraoui-debug&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-</div>
-
-<div align="center">
-  <img width="95%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tahaenasraoui-debug&theme=tokyonight" alt="Contribution Graph" />
-</div>
